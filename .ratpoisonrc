@@ -50,8 +50,6 @@ bind G grid
 #select
 bind 1 select 1
 bind 2 select 2
-bind 3 select 3
-bind 4 select 4 
 
 # reload / change  ratpoison
 bind F5 reload
