@@ -56,7 +56,6 @@ bind F5 reload
 bind R restart
 bind r source /home/benni/.ratpoisonrc
 bind C execterm vim /home/benni/ratpoisonrc/.ratpoisonrc
-bind U execterm source /home/benni/ratpoisonrc/github_sync.sh
 
 bind Q quit
 
