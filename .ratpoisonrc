@@ -1,0 +1,88 @@
+startup_message off
+set framesels 123456789
+set padding 0 14 0 0
+set barpadding 0 0
+set barinpadding 0
+set border 2
+set fwcolor black
+set font Terminus:style=bold:size=10
+
+# aliases
+alias grid exec ratpoison -c "select -" -c "only" -c "hsplit" -c next -c "vsplit" -c next -c "focusright" -c next -c "vsplit" -c "next"
+alias xpaste meta S-Insert
+alias colonterm colon exec x-terminal-emulator -e
+alias execterm exec x-terminal-emulator -e
+alias togglebarhide exec xdotool key --window $(xdotool search --class dzen) b
+alias slack exec /opt/google/chrome/google-chrome --app=https://sti2.slack.com/messages/general/details/
+ 
+
+# keybindings
+unbind s
+unbind C-s
+unbind M-Tab
+
+#escape
+escape Super_L
+
+# applications
+bind H execterm htop
+
+
+##################
+# wm bindings    #
+#################
+
+bind z delete
+bind c-C kill
+bind q remove
+bind a only
+
+# splitting
+bind s vsplit
+bind S hsplit
+bind o focus
+bind O focusprev
+bind Prior focusprev 
+bind Next focus 
+
+bind G grid
+
+#select
+bind 1 select 1
+bind 2 select 2
+bind 3 select 3
+bind 4 select 4 
+
+# reload / change  ratpoison
+bind F5 reload
+bind R restart
+bind r source /home/benni/.ratpoisonrc
+bind C execterm vim /home/benni/ratpoisonrc/.ratpoisonrc
+bind U execterm source /home/benni/ratpoisonrc/github_sync.sh
+
+bind Q quit
+
+bind y xpaste
+bind 9 exec
+
+bind semicolon colonterm  
+bind F1 exec rpws 1
+bind F2 exec rpws 2
+bind F3 exec rpws 3
+bind F4 exec rpws 4
+bind F5 exec rpws 5
+bind F6 exec rpws 6
+bind F7 exec rpws 7
+bind F8 exec rpws 8
+bind F9 exec rpws 9
+bind bracketright focus
+bind bracketleft focusprev
+bind C-bracketright focus
+bind C-bracketleft focusprev
+bind C-comma rpwsp
+bind C-period rpwsn
+bind T title
+bind w fselect
+bind L windows
+bind C-s focuslast
+bind B togglebarhide
