@@ -16,6 +16,10 @@ alias togglebarhide exec xdotool key --window $(xdotool search --class dzen) b
 alias slack exec /opt/google/chrome/google-chrome --app=https://sti2.slack.com/messages/general/details/
 alias chrome exec google-chrome
 alias gitsync execterm /home/benni/ratpoisonrc/github_sync.sh
+alias increase_master exec amixer sset Master 5%+
+alias decrease_master exec amixer sset Master 5%-
+
+
 
 # keybindings
 unbind s
@@ -67,6 +71,11 @@ bind Q quit
 bind y xpaste
 bind 9 exec
 
+
+#change volume
+bind braceright increase_master
+bind braceleft decrease_master
+
 bind semicolon colonterm  
 bind F1 exec rpws 1
 bind F2 exec rpws 2
@@ -77,8 +86,6 @@ bind F6 exec rpws 6
 bind F7 exec rpws 7
 bind F8 exec rpws 8
 bind F9 exec rpws 9
-bind bracketright focus
-bind bracketleft focusprev
 bind C-bracketright focus
 bind C-bracketleft focusprev
 bind T title
